@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: red;
+        }
+
+        #content {
+            text-align: center;
+        }
+
+        h1 {
+            color: black;
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        #imageContainer {
+            background-color: lightgray;
+            padding: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            display: inline-block; /* This makes the container only as wide as its content */
+        }
+
+        #imageContainer:hover {
+            background-color: gray;
+        }
+
+        img {
+            max-width: 50%;
+            height: auto;
+            display: block;
+            margin: 20px auto; /* Center the image with some spacing */
+        }
+    </style>
+    <title>Luc Loves Payten</title>
+</head>
+<body>
+    <div id="content">
+        <h1 id="title">Luc Loves Payten</h1>
+        <div id="imageContainer" onclick="displayImage()">
+            <p>Click here</p>
+        </div>
+    </div>
+    <script>
+        function displayImage() {
+            var title = document.getElementById("title");
+            title.style.display = "none"; // Hide the title
+            var imageUrl = "https://i.imgur.com/Sxhp4y3.jpg";
+            var img = document.createElement("img");
+            img.src = imageUrl;
+            img.alt = "Luc Loves Payten Image";
+            document.body.appendChild(img);
+        }
+    </script>
+</body>
+</html>
